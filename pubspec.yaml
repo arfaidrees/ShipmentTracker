@@ -41,7 +41,7 @@ dependencies:
   geolocator: ^10.1.1
   location: ^5.0.3
   google_maps_webservice: ^0.0.19
-
+  flutter_svg: ^0.22.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,6 +81,7 @@ flutter:
     - assets/adil.png
     - assets/mirza.png
     - assets/pickup.png
+    - assets/driver.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

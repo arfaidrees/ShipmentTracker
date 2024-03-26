@@ -15,7 +15,7 @@ class _OrderState extends State<Order> {
         color: Colors.grey,
         child: Center(
           child: Text(
-            'Ongoing Tasks',
+            'Ongoing orders',
             style: TextStyle(
               fontSize: 20,
               color: Colors.black,
@@ -25,10 +25,10 @@ class _OrderState extends State<Order> {
       );
     } else {
       return Container(
-        color: option == 'Completed' ? Colors.purpleAccent : Colors.orange,
+        color: option == 'Completed' ? Colors.pinkAccent : Colors.orange,
         child: Center(
           child: Text(
-            '$option Tasks',
+            '$option orders',
             style: TextStyle(
               fontSize: 20,
               color: Colors.white,

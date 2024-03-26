@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shipment/Settings.dart';
 import 'package:shipment/drivers.dart';
 import 'package:shipment/order.dart';
 import 'Pickup.dart';
@@ -53,7 +54,12 @@ class _HomePageState extends State<HomePage> {
               );
             }),
             drawerListTile(Icons.help, 'Help Center', () {}),
-            drawerListTile(Icons.settings, 'Settings', () {}),
+            drawerListTile(Icons.settings, 'Settings', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Setting()),
+              );
+            }),
           ],
         ),
       ),
