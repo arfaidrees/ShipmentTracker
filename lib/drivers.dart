@@ -38,7 +38,7 @@ class _DriversScreenState extends State<DriversScreen> {
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
-                labelText: 'Enter Driver Name',
+                labelText: 'Enter Drivers Name',
               ),
             ),
             SizedBox(height: 20),
