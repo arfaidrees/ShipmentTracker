@@ -29,7 +29,7 @@ class _DriversScreenState extends State<DriversScreen> {
       appBar: AppBar(
         title: Text('My Drivers'),
       ),
-      backgroundColor: Colors.orange, // Set background color to gold
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -60,6 +60,9 @@ class _DriversScreenState extends State<DriversScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: _selectedCategory != null ? _addDriver : null,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange, // Set button color to orange
+              ),
               child: Text('Add Driver'),
             ),
             SizedBox(height: 20),
@@ -68,7 +71,7 @@ class _DriversScreenState extends State<DriversScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    color: Colors.white,
+                    color: Colors.orange,
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Car Drivers',
@@ -93,7 +96,7 @@ class _DriversScreenState extends State<DriversScreen> {
                   ),
                   SizedBox(height: 20),
                   Container(
-                    color: Colors.white,
+                    color: Colors.orange,
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Motorcycle Drivers',

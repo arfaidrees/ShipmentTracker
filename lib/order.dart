@@ -24,7 +24,6 @@ class _OrderState extends State<Order> {
         ),
       );
     } else {
-      // Return colored container for completed and canceled tasks
       return Container(
         color: option == 'Completed' ? Colors.purpleAccent : Colors.orange,
         child: Center(
