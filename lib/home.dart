@@ -10,8 +10,35 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  double _opacity = 1.0; // Initial opacity value
+  late AnimationController _controller; // Declare AnimationController
   List<Map<String, dynamic>> cartItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: Duration(milliseconds: 1000),
+      vsync: this,
+    );
+    _startBreathingAnimation();
+  }
+
+  void _startBreathingAnimation() {
+    // Use Tween to animate opacity from 1.0 to 0.6 and back to 1.0
+    Tween<double> tween = Tween<double>(begin: 1.0, end: 0.6);
+
+    // Repeat the animation indefinitely
+    _controller.repeat(reverse: true);
+
+    // Listen to animation updates and set the opacity accordingly
+    _controller.addListener(() {
+      setState(() {
+        _opacity = tween.animate(_controller).value;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +61,24 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.orange),
-              child: Text(
-                'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AnimatedOpacity(
+                    opacity: _opacity, // Use the animated opacity value
+                    duration: Duration(milliseconds: 500),
+                    child: Image.asset(
+                      'assets/adil.png',
+                      height: 100,
+                      fit: BoxFit.contain, // Adjust the fit property to maintain the aspect ratio
+                    ),
+                  ),
+
+                  Text(
+                    'Menu',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                ],
               ),
             ),
             drawerListTile(Icons.shopping_bag, 'Orders', () {
@@ -56,13 +98,13 @@ class _HomePageState extends State<HomePage> {
             drawerListTile(Icons.help, 'Help Center', () {}),
             drawerListTile(Icons.settings, 'Settings', () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Setting()),
-              );
-            }),
+              context,
+              MaterialPageRoute(builder: (context) => Setting()),
+            );}),
           ],
         ),
       ),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -222,8 +264,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 title: Text('Drop-off'),
-                onTap: () {
-                },
+                onTap: () {},
               ),
             ],
           ),

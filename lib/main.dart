@@ -151,11 +151,11 @@ class _StartupState extends State<Startup> with TickerProviderStateMixin {
                     displayFullTextOnTap: true,
                     stopPauseOnTap: true,
                   ),
-                  SizedBox(height: 20), // Add some space between the text and the van
+                  SizedBox(height: 20),
                   SlideTransition(
                     position: _animation,
                     child: Image.asset(
-                      'assets/van.png', // Replace 'assets/delivery_van.png' with your actual image path
+                      'assets/van.png',
                       height: 300
                       ,
                     ),
