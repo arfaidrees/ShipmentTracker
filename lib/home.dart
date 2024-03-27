@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shipment/Settings.dart';
+import 'package:shipment/deleveryform.dart';
 import 'package:shipment/drivers.dart';
+import 'package:shipment/helpcenter.dart';
 import 'package:shipment/order.dart';
 import 'Pickup.dart';
 import 'availablevehicles.dart';
@@ -26,13 +28,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void _startBreathingAnimation() {
-    // Use Tween to animate opacity from 1.0 to 0.6 and back to 1.0
     Tween<double> tween = Tween<double>(begin: 1.0, end: 0.6);
-
-    // Repeat the animation indefinitely
     _controller.repeat(reverse: true);
-
-    // Listen to animation updates and set the opacity accordingly
     _controller.addListener(() {
       setState(() {
         _opacity = tween.animate(_controller).value;
@@ -88,14 +85,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               );
             }),
             drawerListTile(Icons.account_balance_wallet, 'Wallet', () {}),
-            drawerListTile(Icons.local_shipping, 'Delivery Form', () {}),
+            drawerListTile(Icons.local_shipping, 'Delivery Form', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => dForm()),
+              );
+            }),
             drawerListTile(Icons.people, 'My Drivers', () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DriversScreen()),
               );
             }),
-            drawerListTile(Icons.help, 'Help Center', () {}),
+            drawerListTile(Icons.help, 'Help Center', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HelpCenter()),
+              );
+            }),
             drawerListTile(Icons.settings, 'Settings', () {
               Navigator.push(
               context,

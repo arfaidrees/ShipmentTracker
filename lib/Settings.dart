@@ -43,7 +43,6 @@ class CardItem extends StatelessWidget {
         title: Text(title),
         trailing: hasArrow ? Icon(Icons.keyboard_arrow_right) : null,
         onTap: () {
-
         },
       ),
     );

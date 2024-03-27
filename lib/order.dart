@@ -43,6 +43,7 @@ class _OrderState extends State<Order> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Orders'),
       ),
       body: Column(
