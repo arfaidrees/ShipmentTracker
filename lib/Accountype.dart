@@ -27,8 +27,8 @@ class AccountType extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/box.jpg'), // Replace 'background_image.jpg' with your image asset
-            fit: BoxFit.cover, // Adjust the image to cover the entire container
+            image: AssetImage('assets/box.jpg'),t
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
@@ -50,7 +50,7 @@ class AccountType extends StatelessWidget {
                 'What type of delivery do you need?',
                 style: TextStyle(
                   fontSize: 14,
-                  color: Colors.grey[800], // Text color
+                  color: Colors.grey[800],
                 ),
               ),
               SizedBox(height: 20),
@@ -77,11 +77,9 @@ class AccountType extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => Business()),
                   );
-                  // Add your onPressed logic for the business button
                 },
               ),
               SizedBox(height: 20),
-              // Already have an account Button
               TextButton(
                 onPressed: () {
                   Navigator.push(
