@@ -46,15 +46,19 @@ class _SettingState extends State<Setting> {
             ),
             Expanded(child: SizedBox()), // Spacer to push "Sign Out" to the bottom
             Center(
-              child: CardItem(
-                title: 'Sign Out',
-                hasArrow: false,
-                textColor: Colors.orange,
-                onTap: () {
-                  // Handle sign-out action here
-                  // For example:
-                  // Navigator.pushReplacementNamed(context, '/login');
+              child: ElevatedButton(
+                onPressed: () {
+                  // Submit form logic here
+                  // Access form data using _nameController.text, _addressController.text, etc.
                 },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: Text('Sign out'),
               ),
             ),
           ],
@@ -142,17 +146,20 @@ class _PasswordChangeScreenState extends State<PasswordChangeScreen> {
               keyboardType: TextInputType.number,
             ),
             SizedBox(height: 16.0),
-        ElevatedButton(
-          onPressed: () {
-            // Verify phone number and change password here
-            // You can use a package like `firebase_auth` to handle phone number verification
-          },
-          child: Text('Continue'),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange,
-            textStyle: TextStyle(color: Colors.white),
-          ),
-        )
+            ElevatedButton(
+              onPressed: () {
+                // Submit form logic here
+                // Access form data using _nameController.text, _addressController.text, etc.
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.orange,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: Text('Submit'),
+            ),
           ],
         ),
       ),
@@ -165,50 +172,53 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('ZipZap'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.orange.shade400, Colors.orange.shade900],
-          ),
-        ),
-        child: Center(
-          child: Card(
-            elevation: 5.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.orange.shade400, Colors.orange.shade900],
             ),
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'About ZipZap',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+          ),
+          child: Center(
+            child: Card(
+              elevation: 5.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'About ZipZap',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Text(
-                    'Founded in Pakistan in 2024, ZipZap is an on-demand delivery platform with a mission to empower communities by providing fast, convenient, and cost-effective delivery services.\n\n'
-                        'Customers, ranging from individuals to large enterprises, can easily utilize our diverse fleet of delivery vehicles, operated by skilled professionals, with just a tap on the app.\n\n'
-                        'Our innovative approach to logistics has revolutionized the transportation and delivery industry, setting new standards for efficiency and reliability.',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.normal,
+                    SizedBox(height: 10.0),
+                    Text(
+                      'Founded in Pakistan in 2024, ZipZap is an on-demand delivery platform with a mission to empower communities by providing fast, convenient, and cost-effective delivery services.\n\n'
+                          'Customers, ranging from individuals to large enterprises, can easily utilize our diverse fleet of delivery vehicles, operated by skilled professionals, with just a tap on the app.\n\n'
+                          'Our innovative approach to logistics has revolutionized the transportation and delivery industry, setting new standards for efficiency and reliability.',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

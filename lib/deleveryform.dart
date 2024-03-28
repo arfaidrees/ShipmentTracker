@@ -77,6 +77,7 @@ class _dFormState extends State<dForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Form'),
       ),
       body: Container(
@@ -84,7 +85,7 @@ class _dFormState extends State<dForm> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.orange.shade200, Colors.orange.shade400],
+            colors: [Colors.orange.shade400, Colors.orange.shade300],
           ),
         ),
         padding: EdgeInsets.all(16.0),
@@ -120,7 +121,7 @@ class _dFormState extends State<dForm> {
               },
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.orangeAccent,
+                backgroundColor: Colors.orange,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
