@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'main.dart';
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -27,15 +24,15 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: MediaQuery.of(context).size.height, // Set height to screen height
+          height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.orange, Colors.deepOrange], // Use specific colors or shades
+              colors: [Colors.orange, Colors.deepOrange],
             ),
           ),
-          child: SingleChildScrollView( // Wrap the Column with SingleChildScrollView
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(height:80),

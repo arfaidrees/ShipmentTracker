@@ -7,7 +7,7 @@ class DriversScreen extends StatefulWidget {
 
 class _DriversScreenState extends State<DriversScreen> {
   TextEditingController _nameController = TextEditingController();
-  String? _selectedCategory; // Use nullable type
+  String? _selectedCategory;
   List<String> _carDrivers = [];
   List<String> _bikeDrivers = [];
 

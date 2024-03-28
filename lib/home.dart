@@ -4,6 +4,7 @@ import 'package:shipment/deleveryform.dart';
 import 'package:shipment/drivers.dart';
 import 'package:shipment/helpcenter.dart';
 import 'package:shipment/order.dart';
+import 'package:shipment/wallet.dart';
 import 'Pickup.dart';
 import 'availablevehicles.dart';
 
@@ -84,7 +85,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 MaterialPageRoute(builder: (context) => Order()),
               );
             }),
-            drawerListTile(Icons.account_balance_wallet, 'Wallet', () {}),
+            drawerListTile(Icons.account_balance_wallet, 'Wallet', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => WalletPage()),
+              );
+            }),
             drawerListTile(Icons.local_shipping, 'Delivery Form', () {
               Navigator.push(
                 context,

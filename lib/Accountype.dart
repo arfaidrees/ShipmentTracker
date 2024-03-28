@@ -27,7 +27,7 @@ class AccountType extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/box.jpg'),t
+            image: AssetImage('assets/box.jpg'),
             fit: BoxFit.cover,
           ),
         ),
